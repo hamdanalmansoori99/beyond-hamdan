@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Insights Blog — Beyond Horizon | DNA & Genomics Articles</title>
+<meta name="description" content="Science-backed articles on genetics, nutrition, fitness, and wellness. Learn how your DNA shapes your health.">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--dark:#06090F;--dark2:#0A1019;--cyan:#00C2FF;--cyan2:#00E5C3;--green:#00D68F;--amber:#FFB547;--purple:#B18CFF;--light:#F8FAFB;--light2:#EFF3F6;--white:#FFF;--text:#1A1F36;--text2:#3D4663;--text3:#7A829E;--font:'Manrope',sans-serif;--r:12px;--r2:16px}html{scroll-behavior:smooth}body{font-family:var(--font);color:var(--text);background:var(--light);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{text-decoration:none;color:inherit}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}.reveal.v{opacity:1;transform:translateY(0)}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:14px 4%;display:flex;align-items:center;justify-content:space-between;background:rgba(6,9,15,.92);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.04)}.nav-logo{font-weight:800;font-size:20px;color:#fff;letter-spacing:-.3px}.nav-logo span{background:linear-gradient(135deg,var(--cyan),var(--cyan2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nl{display:flex;gap:28px;align-items:center}.nl a{font-size:13.5px;font-weight:500;color:var(--text3);transition:color .2s}.nl a:hover{color:#fff}.nl a.active{color:var(--cyan)}.btn-n{background:linear-gradient(135deg,var(--green),#00B87A);color:#062B1C;padding:9px 22px;border-radius:var(--r);font-weight:700;font-size:13.5px;border:none;cursor:pointer}
+.page-hero{padding:160px 4% 60px;background:var(--dark);text-align:center;position:relative;overflow:hidden}.page-hero::before{content:'';position:absolute;top:-100px;left:50%;width:600px;height:400px;background:radial-gradient(ellipse,rgba(0,194,255,.08),transparent 70%);transform:translateX(-50%);pointer-events:none}.page-hero h1{font-size:clamp(34px,4vw,52px);font-weight:800;color:#fff;letter-spacing:-1.5px;margin-bottom:14px;position:relative;z-index:2}.page-hero p{font-size:17px;color:var(--text3);max-width:540px;margin:0 auto;line-height:1.65;position:relative;z-index:2}
+.mw{max-width:1160px;margin:0 auto}
+.filters{padding:32px 4% 0;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.filter-btn{padding:8px 20px;border-radius:100px;font-size:13px;font-weight:600;border:1.5px solid rgba(0,0,0,.08);background:var(--white);color:var(--text2);cursor:pointer;transition:all .2s}.filter-btn:hover,.filter-btn.active{background:var(--cyan);color:#fff;border-color:var(--cyan)}
+.blog-grid{padding:40px 4% 80px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1160px;margin:0 auto}
+.blog-card{background:var(--white);border-radius:var(--r2);overflow:hidden;border:1px solid rgba(0,0,0,.04);transition:all .4s;cursor:pointer}.blog-card:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(0,0,0,.07)}
+.blog-img{height:200px;background:var(--dark2);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.blog-img svg{width:48px;height:48px;opacity:.3}
+.blog-cat{position:absolute;top:14px;left:14px;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.5px;color:#fff}
+.cat-nutrition{background:var(--cyan)}.cat-fitness{background:var(--green)}.cat-heart{background:var(--purple)}.cat-wellness{background:var(--amber)}.cat-ancestry{background:#FF6B6B}
+.blog-body{padding:22px 24px 26px}
+.blog-card h3{font-size:17px;font-weight:700;letter-spacing:-.3px;margin-bottom:8px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.blog-excerpt{font-size:13.5px;color:var(--text2);line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.blog-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text3)}.blog-read{color:var(--cyan);font-weight:600}
+.load-more{text-align:center;padding:0 4% 80px}.load-btn{padding:14px 36px;border-radius:var(--r);font-weight:700;font-size:14px;border:1.5px solid rgba(0,0,0,.1);background:var(--white);color:var(--text);cursor:pointer;transition:all .2s}.load-btn:hover{border-color:var(--cyan);color:var(--cyan)}
+.newsletter{padding:80px 4%;background:var(--dark);text-align:center}.newsletter h2{font-size:clamp(24px,3vw,34px);font-weight:800;color:#fff;letter-spacing:-.8px;margin-bottom:10px}.newsletter p{font-size:15px;color:var(--text3);margin-bottom:28px}
+.nl-form{display:flex;gap:10px;max-width:460px;margin:0 auto}.nl-form input{flex:1;padding:14px 18px;border-radius:var(--r);border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:#fff;font-size:14px;font-family:var(--font);outline:none}.nl-form input::placeholder{color:var(--text3)}.nl-form input:focus{border-color:var(--cyan)}.nl-form button{padding:14px 28px;border-radius:var(--r);background:linear-gradient(135deg,var(--green),#00B87A);color:var(--dark);font-weight:700;font-size:14px;border:none;cursor:pointer;transition:all .3s;white-space:nowrap}.nl-form button:hover{box-shadow:0 4px 20px rgba(0,214,143,.2)}
+.footer{padding:60px 4% 24px;background:var(--dark);text-align:center;border-top:1px solid rgba(255,255,255,.04)}.footer p{font-size:13px;color:var(--text3)}.footer a{color:var(--text3)}.footer a:hover{color:var(--cyan)}
+@media(max-width:768px){.blog-grid{grid-template-columns:1fr}.nl{display:none}.hamburger{display:flex}.nl-form{flex-direction:column}}
+
+/* Hamburger menu */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;z-index:1002;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;top:54px;right:0;width:240px;background:rgba(6,9,15,.97);backdrop-filter:blur(24px);z-index:1001;flex-direction:column;padding:20px 24px;gap:6px;border-radius:0 0 0 16px;border:1px solid rgba(255,255,255,.06);border-top:none;border-right:none;transform:translateY(-10px);opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.mobile-menu.open{display:flex;opacity:1;transform:translateY(0);pointer-events:auto}
+.mobile-menu a{font-size:15px;font-weight:600;color:rgba(255,255,255,.6);transition:all .2s;padding:10px 12px;border-radius:8px}
+.mobile-menu a:hover{color:#fff;background:rgba(255,255,255,.05)}
+.mobile-menu .btn-n{font-size:14px;padding:11px 20px;margin-top:6px;text-align:center;color:#062B1C;background:linear-gradient(135deg,#00D68F,#00B87A);border-radius:12px;font-weight:700}
+
+</style>
+</head>
+<body>
+<nav class="nav"><a href="index.html" class="nav-logo">Beyond<span>Horizon</span></a><div class="nl"><a href="how-it-works.html">How It Works</a><a href="index.html#products">DNA Tests</a><a href="blog.html" class="active">Blog</a><a href="corporate.html">Corporate</a><a href="contact.html">Contact</a><a href="index.html#products" class="btn-n">Order Your Kit</a></div><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="how-it-works.html">How It Works</a>
+  <a href="blog.html">Blog</a>
+  <a href="corporate.html">Corporate</a>
+  <a href="contact.html">Contact</a>
+  <a href="index.html#pricing" class="btn-n">Order Your Kit</a>
+</div>
+
+<section class="page-hero">
+  <h1>Health Insights</h1>
+  <p>Science-backed articles on genetics, nutrition, fitness, and wellness. Learn how your DNA shapes every aspect of your health.</p>
+</section>
+
+<div class="filters">
+  <button class="filter-btn active" data-cat="all">All</button>
+  <button class="filter-btn" data-cat="nutrition">Nutrition</button>
+  <button class="filter-btn" data-cat="fitness">Fitness</button>
+  <button class="filter-btn" data-cat="heart">Heart Health</button>
+  <button class="filter-btn" data-cat="wellness">Wellness</button>
+  <button class="filter-btn" data-cat="ancestry">Ancestry</button>
+</div>
+
+<div class="blog-grid" id="blog-grid">
+  <article class="blog-card reveal" data-cat="nutrition"><div class="blog-img"><span class="blog-cat cat-nutrition">Nutrition</span><svg viewBox="0 0 24 24" stroke="#fff" fill="none" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg></div><div class="blog-body"><h3>What Your DNA Says About Vitamin D — And Why It Matters in Dubai</h3><p class="blog-excerpt">Despite abundant sunshine, Vitamin D deficiency is common in the UAE. Your genes play a crucial role in how you process and absorb this essential nutrient.</p><div class="blog-meta"><span>Mar 18, 2026 · 6 min</span><span class="blog-read">Read →</span></div></div></article>
+  <article class="blog-card reveal" data-cat="fitness"><div class="blog-img"><span class="blog-cat cat-fitness">Fitness</span><svg viewBox="0 0 24 24" stroke="#fff" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg></div><div class="blog-body"><h3>5 Genetic Factors That Determine Your Optimal Training Style</h3><p class="blog-excerpt">Why HIIT works for some and endurance works for others. Your muscle fiber composition, VO2 max potential, and recovery speed are all written in your DNA.</p><div class="blog-meta"><span>Mar 12, 2026 · 8 min</span><span class="blog-read">Read →</span></div></div></article>
+  <article class="blog-card reveal" data-cat="wellness"><div class="blog-img"><span class="blog-cat cat-wellness">Wellness</span><svg viewBox="0 0 24 24" stroke="#fff" fill="none" stroke-width="1.5"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></div><div class="blog-body"><h3>Is DNA Testing Safe? Everything You Need to Know</h3><p class="blog-excerpt">Privacy, data security, accuracy, and what happens to your sample after testing. A complete guide to making an informed decision about genetic testing.</p><div class="blog-meta"><span>Mar 5, 2026 · 5 min</span><span class="blog-read">Read →</span></div></div></article>
+  <article class="blog-card reveal" data-cat="nutrition"><div class="blog-img"><span class="blog-cat cat-nutrition">Nutrition</span><svg viewBox="0 0 24 24" stroke="#fff" fill="none" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg></div><div class="blog-body"><h3>Mediterranean vs. Keto vs. Plant-Based: What Your Genes Say</h3><p class="blog-excerpt">The best diet for you depends on your genetic makeup. Learn how variations in fat metabolism, carb sensitivity, and inflammation genes determine your ideal eating pattern.</p><div class="blog-meta"><span>Feb 27, 2026 · 7 min</span><span class="blog-read">Read →</span></div></div></article>
+  <article class="blog-card reveal" data-cat="ancestry"><div class="blog-img"><span class="blog-cat cat-ancestry">Ancestry</span><svg viewBox="0 0 24 24" stroke="#fff" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><div class="blog-body"><h3>Understanding Your Heritage: What DNA Reveals About Gulf Ancestry</h3><p class="blog-excerpt">The Arabian Peninsula has a rich genetic tapestry shaped by thousands of years of trade, migration, and cultural exchange. Discover what your DNA says about your roots.</p><div class="blog-meta"><span>Feb 20, 2026 · 9 min</span><span class="blog-read">Read →</span></div></div></article>
+  <article class="blog-card reveal" data-cat="heart"><div class="blog-img"><span class="blog-cat cat-heart">Heart Health</span><svg viewBox="0 0 24 24" stroke="#fff" fill="none" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div><div class="blog-body"><h3>Genetic Risk Factors for Cardiovascular Disease in the UAE</h3><p class="blog-excerpt">Heart disease is the leading cause of death in the UAE. Understanding your genetic predisposition can help you take preventive action decades before symptoms appear.</p><div class="blog-meta"><span>Feb 14, 2026 · 6 min</span><span class="blog-read">Read →</span></div></div></article>
+</div>
+
+<div class="load-more"><button class="load-btn">Load More Articles</button></div>
+
+<section class="newsletter">
+  <h2 class="reveal">Stay informed with the latest in genomics</h2>
+  <p class="reveal">Get weekly health insights based on the latest genetic research. No spam.</p>
+  <div class="nl-form reveal"><input type="email" placeholder="Enter your email"><button>Subscribe</button></div>
+</section>
+
+<footer class="footer"><p>© 2026 Beyond Horizon. All rights reserved. · <a href="#">Privacy Policy</a> · <a href="#">Terms</a> · <a href="index.html">Home</a></p></footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
+document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const cat=btn.dataset.cat;document.querySelectorAll('.blog-card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none'})})});
+</script>
+<script>
+var burger=document.getElementById("hamburger"),mm=document.getElementById("mobile-menu");
+burger.addEventListener("click",function(){burger.classList.toggle("open");mm.classList.toggle("open")});
+document.querySelectorAll("#mobile-menu a").forEach(function(a){a.addEventListener("click",function(){burger.classList.remove("open");mm.classList.remove("open")})});
+</script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — Beyond Horizon | Order Your DNA Kit</title>
+<meta name="description" content="Complete your DNA test kit order. Secure checkout with free UAE shipping.">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--dark:#06090F;--cyan:#00C2FF;--cyan2:#00E5C3;--green:#00D68F;--amber:#FFB547;--purple:#B18CFF;--light:#F8FAFB;--light2:#EFF3F6;--white:#FFF;--text:#1A1F36;--text2:#3D4663;--text3:#7A829E;--font:'Manrope',sans-serif;--r:12px;--r2:16px}html{scroll-behavior:smooth}body{font-family:var(--font);color:var(--text);background:var(--light2);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{text-decoration:none;color:inherit}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:14px 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(6,9,15,.96);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.04)}.nav-logo{font-weight:800;font-size:20px;color:#fff}.nav-logo span{background:linear-gradient(135deg,var(--cyan),var(--cyan2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-secure{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--green);font-weight:600}.nav-secure svg{width:14px;height:14px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.checkout{padding:100px 5% 60px;max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1.3fr .7fr;gap:32px;align-items:start}
+.checkout-form{background:var(--white);border-radius:var(--r2);padding:36px;border:1px solid rgba(0,0,0,.04)}
+.checkout-form h2{font-size:22px;font-weight:800;letter-spacing:-.5px;margin-bottom:4px}
+.checkout-form>p{font-size:14px;color:var(--text3);margin-bottom:28px}
+.step-indicator{display:flex;gap:8px;margin-bottom:28px}.step-dot{width:32px;height:4px;border-radius:2px;background:#E2E8F0;transition:background .3s}.step-dot.active{background:var(--cyan)}.step-dot.done{background:var(--green)}
+.form-section{margin-bottom:28px}.form-section h3{font-size:16px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}.form-section h3 span{width:24px;height:24px;border-radius:50%;background:var(--cyan);color:#fff;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.form-group{display:flex;flex-direction:column;gap:4px}.form-group.full{grid-column:1/-1}
+.form-group label{font-size:12px;font-weight:600;color:var(--text2)}
+.form-group input,.form-group select{padding:12px 14px;border-radius:var(--r);border:1.5px solid #E2E8F0;font-size:14px;font-family:var(--font);color:var(--text);background:var(--light);outline:none;transition:border-color .2s}.form-group input:focus,.form-group select:focus{border-color:var(--cyan)}
+.form-group input::placeholder{color:#B8C0CC}
+.pay-methods{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.pay-method{padding:10px 18px;border-radius:var(--r);border:1.5px solid #E2E8F0;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;background:var(--white);display:flex;align-items:center;gap:6px}
+.pay-method.selected{border-color:var(--cyan);background:rgba(0,194,255,.04)}
+.pay-method:hover{border-color:var(--cyan)}
+.checkout-btn{width:100%;padding:16px;border-radius:var(--r);background:linear-gradient(135deg,var(--green),#00B87A);color:#062B1C;font-weight:800;font-size:16px;border:none;cursor:pointer;transition:all .3s;font-family:var(--font);margin-top:8px}
+.checkout-btn:hover{box-shadow:0 6px 28px rgba(0,214,143,.3);transform:translateY(-1px)}
+.secure-note{text-align:center;margin-top:12px;font-size:12px;color:var(--text3);display:flex;align-items:center;justify-content:center;gap:6px}
+.secure-note svg{width:14px;height:14px;stroke:var(--text3);fill:none;stroke-width:2}
+/* Order summary */
+.order-summary{background:var(--white);border-radius:var(--r2);padding:28px;border:1px solid rgba(0,0,0,.04);position:sticky;top:80px}
+.order-summary h3{font-size:17px;font-weight:700;margin-bottom:18px}
+.order-item{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.04)}
+.order-item:last-of-type{border-bottom:none}
+.order-item-name{font-size:14px;font-weight:600}
+.order-item-desc{font-size:12px;color:var(--text3)}
+.order-item-price{font-size:15px;font-weight:700}
+.order-plan-select{width:100%;padding:10px 14px;border-radius:var(--r);border:1.5px solid #E2E8F0;font-size:14px;font-family:var(--font);background:var(--light);margin-bottom:16px;cursor:pointer}
+.order-divider{height:1px;background:#E2E8F0;margin:12px 0}
+.order-total{display:flex;justify-content:space-between;font-size:18px;font-weight:800;padding-top:8px}
+.order-total span:last-child{color:var(--cyan)}
+.order-badges{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.order-badge{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text3)}
+.order-badge svg{width:16px;height:16px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.footer{padding:40px 5% 20px;text-align:center}.footer p{font-size:12px;color:var(--text3)}.footer a{color:var(--text3)}
+@media(max-width:768px){.checkout{grid-template-columns:1fr;padding:80px 4% 40px}.form-row{grid-template-columns:1fr}.order-summary{position:static}}
+</style>
+</head>
+<body>
+<nav class="nav"><a href="index.html" class="nav-logo">Beyond<span>Horizon</span></a><div class="nav-secure"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Secure Checkout</div></nav>
+
+<div class="checkout">
+  <div class="checkout-form">
+    <h2>Complete Your Order</h2>
+    <p>Fill in your details below. Your DNA kit will arrive in 1-2 business days.</p>
+    <div class="step-indicator"><div class="step-dot active"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+
+    <div class="form-section">
+      <h3><span>1</span> Shipping Information</h3>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Your first name"></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Your last name"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="+971 XX XXX XXXX"></div>
+      </div>
+      <div class="form-group full" style="margin-bottom:12px"><label>Street Address</label><input type="text" placeholder="Building, street, area"></div>
+      <div class="form-row">
+        <div class="form-group"><label>City</label><select><option>Dubai</option><option>Abu Dhabi</option><option>Sharjah</option><option>Ajman</option><option>Ras Al Khaimah</option><option>Fujairah</option><option>Umm Al Quwain</option></select></div>
+        <div class="form-group"><label>Postal Code (optional)</label><input type="text" placeholder="XXXXX"></div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3><span>2</span> Payment Method</h3>
+      <div class="pay-methods">
+        <div class="pay-method selected" onclick="selectPay(this)">💳 Card</div>
+        <div class="pay-method" onclick="selectPay(this)"> Apple Pay</div>
+        <div class="pay-method" onclick="selectPay(this)">🔄 Tabby (4 payments)</div>
+      </div>
+      <div class="form-group full" style="margin-bottom:12px"><label>Card Number</label><input type="text" placeholder="1234 5678 9012 3456"></div>
+      <div class="form-row">
+        <div class="form-group"><label>Expiry</label><input type="text" placeholder="MM/YY"></div>
+        <div class="form-group"><label>CVV</label><input type="text" placeholder="123"></div>
+      </div>
+    </div>
+
+    <button class="checkout-btn" id="place-order">Place Order — AED <span id="total-display">999</span></button>
+    <div class="secure-note"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>256-bit SSL encrypted · Your data is safe</div>
+  </div>
+
+  <div class="order-summary">
+    <h3>Order Summary</h3>
+    <select class="order-plan-select" id="plan-select" onchange="updatePlan()">
+      <option value="599">DNA Essentials — AED 599</option>
+      <option value="999" selected>DNA Health 360 — AED 999</option>
+      <option value="1499">DNA Complete — AED 1,499</option>
+    </select>
+    <div class="order-item"><div><div class="order-item-name" id="plan-name">DNA Health 360</div><div class="order-item-desc">30+ health reports · Priority processing</div></div><div class="order-item-price" id="plan-price">AED 999</div></div>
+    <div class="order-item"><div><div class="order-item-name">Shipping</div><div class="order-item-desc">UAE-wide delivery · 1-2 business days</div></div><div class="order-item-price" style="color:var(--green)">FREE</div></div>
+    <div class="order-divider"></div>
+    <div class="order-total"><span>Total</span><span id="order-total">AED 999</span></div>
+    <div class="order-badges">
+      <div class="order-badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Free shipping across all 7 Emirates</div>
+      <div class="order-badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>30-day money-back guarantee</div>
+      <div class="order-badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Results in 2-3 weeks</div>
+      <div class="order-badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Lifetime access to your reports</div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer"><p>© 2026 Beyond Horizon. All rights reserved. · <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="index.html">Back to Home</a></p></footer>
+
+<script>
+var plans = {
+  '599': { name: 'DNA Essentials', desc: '1 report category · Email consultation', price: 'AED 599' },
+  '999': { name: 'DNA Health 360', desc: '30+ health reports · Priority processing', price: 'AED 999' },
+  '1499': { name: 'DNA Complete', desc: 'Everything + Ancestry + Cancer screening', price: 'AED 1,499' }
+};
+function updatePlan() {
+  var sel = document.getElementById('plan-select');
+  var val = sel.value;
+  var plan = plans[val];
+  document.getElementById('plan-name').textContent = plan.name;
+  document.querySelector('.order-item-desc').textContent = plan.desc;
+  document.getElementById('plan-price').textContent = plan.price;
+  document.getElementById('order-total').textContent = plan.price;
+  document.getElementById('total-display').textContent = val === '1499' ? '1,499' : val;
+}
+function selectPay(el) {
+  document.querySelectorAll('.pay-method').forEach(function(m) { m.classList.remove('selected'); });
+  el.classList.add('selected');
+}
+// Check URL params for pre-selected plan
+var params = new URLSearchParams(window.location.search);
+var planParam = params.get('plan');
+if (planParam === 'essentials') document.getElementById('plan-select').value = '599';
+else if (planParam === 'health360') document.getElementById('plan-select').value = '999';
+else if (planParam === 'complete') document.getElementById('plan-select').value = '1499';
+updatePlan();
+
+document.getElementById('place-order').addEventListener('click', function() {
+  alert('This is a demo checkout. In production, this would connect to Stripe or your payment gateway.');
+});
+</script>
+</body>
+</html>

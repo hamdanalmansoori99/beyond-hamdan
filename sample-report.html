@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample DNA Report — Beyond Horizon | See What You'll Discover</title>
+<meta name="description" content="Explore a sample DNA health report. See the nutrition, fitness, heart health, and wellness insights you'll unlock with Beyond Horizon testing.">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--dark:#06090F;--dark2:#0A1019;--cyan:#00C2FF;--cyan2:#00E5C3;--green:#00D68F;--amber:#FFB547;--purple:#B18CFF;--red:#FF6B6B;--light:#F8FAFB;--light2:#EFF3F6;--white:#FFF;--text:#1A1F36;--text2:#3D4663;--text3:#7A829E;--font:'Manrope',sans-serif;--r:12px;--r2:16px}html{scroll-behavior:smooth}body{font-family:var(--font);color:var(--text);background:var(--light);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{text-decoration:none;color:inherit}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}.reveal.v{opacity:1;transform:translateY(0)}.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:14px 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(6,9,15,.92);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.04)}.nav-logo{font-weight:800;font-size:20px;color:#fff}.nav-logo span{background:linear-gradient(135deg,var(--cyan),var(--cyan2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nl{display:flex;gap:28px;align-items:center}.nl a{font-size:13.5px;font-weight:500;color:var(--text3);transition:color .2s}.nl a:hover{color:#fff}.btn-n{background:linear-gradient(135deg,var(--green),#00B87A);color:#062B1C;padding:9px 22px;border-radius:var(--r);font-weight:700;font-size:13.5px;border:none;cursor:pointer}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;z-index:1002;background:none;border:none}.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.hamburger.open span:nth-child(2){opacity:0}.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;top:54px;right:0;width:240px;background:rgba(6,9,15,.97);backdrop-filter:blur(24px);z-index:1001;flex-direction:column;padding:20px 24px;gap:6px;border-radius:0 0 0 16px;border:1px solid rgba(255,255,255,.06);border-top:none;border-right:none;transform:translateY(-10px);opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;box-shadow:0 16px 48px rgba(0,0,0,.4)}.mobile-menu.open{display:flex;opacity:1;transform:translateY(0);pointer-events:auto}.mobile-menu a{font-size:15px;font-weight:600;color:rgba(255,255,255,.6);padding:10px 12px;border-radius:8px;transition:all .2s}.mobile-menu a:hover{color:#fff;background:rgba(255,255,255,.05)}.mobile-menu .btn-n{font-size:14px;padding:11px 20px;margin-top:6px;text-align:center}
+.page-hero{padding:160px 5% 60px;background:var(--dark);text-align:center;position:relative;overflow:hidden}.page-hero::before{content:'';position:absolute;top:-100px;left:50%;width:600px;height:400px;background:radial-gradient(ellipse,rgba(0,194,255,.08),transparent 70%);transform:translateX(-50%);pointer-events:none}.page-hero h1{font-size:clamp(34px,4vw,52px);font-weight:800;color:#fff;letter-spacing:-1.5px;margin-bottom:14px;position:relative;z-index:2}.page-hero p{font-size:17px;color:var(--text3);max-width:540px;margin:0 auto;line-height:1.65;position:relative;z-index:2}
+.page-hero .sample-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,181,71,.1);border:1px solid rgba(255,181,71,.2);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:600;color:var(--amber);margin-bottom:20px;position:relative;z-index:2}
+.mw{max-width:900px;margin:0 auto}.section{padding:60px 5%}
+.report-section{background:var(--white);margin:0 5%;border-radius:var(--r2);padding:32px;border:1px solid rgba(0,0,0,.05);margin-bottom:20px}
+.report-header{display:flex;align-items:center;gap:14px;margin-bottom:20px}.report-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.report-icon svg{width:22px;height:22px;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.report-header h2{font-size:20px;font-weight:800;letter-spacing:-.3px}.report-header p{font-size:13px;color:var(--text3)}
+.insight-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.insight{background:var(--light);border-radius:var(--r);padding:20px;border:1px solid rgba(0,0,0,.03)}
+.insight h4{font-size:14px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.insight-status{font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:.5px}
+.status-good{background:rgba(0,214,143,.1);color:var(--green)}
+.status-warn{background:rgba(255,181,71,.1);color:var(--amber)}
+.status-risk{background:rgba(255,107,107,.1);color:var(--red)}
+.insight p{font-size:13px;color:var(--text2);line-height:1.55;margin-bottom:10px}
+.insight-bar{height:6px;border-radius:3px;background:rgba(0,0,0,.06);overflow:hidden;margin-bottom:4px}
+.insight-fill{height:100%;border-radius:3px}
+.insight-meta{font-size:11px;color:var(--text3);display:flex;justify-content:space-between}
+.locked-section{position:relative;overflow:hidden;filter:blur(3px);user-select:none;pointer-events:none}
+.lock-overlay{position:absolute;inset:0;background:rgba(248,250,251,.6);backdrop-filter:blur(2px);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:5;border-radius:var(--r);filter:none;pointer-events:auto;cursor:pointer}
+.lock-overlay svg{width:32px;height:32px;stroke:var(--cyan);fill:none;stroke-width:1.5;margin-bottom:10px}
+.lock-overlay p{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px}
+.lock-overlay span{font-size:12px;color:var(--text3)}
+.report-cta{text-align:center;padding:60px 5%;background:var(--light2)}
+.report-cta h2{font-size:clamp(24px,3vw,34px);font-weight:800;letter-spacing:-.8px;margin-bottom:10px}
+.report-cta p{font-size:15px;color:var(--text2);max-width:440px;margin:0 auto 24px;line-height:1.6}
+.btn-m{background:linear-gradient(135deg,var(--green),#00B87A);color:#062B1C;padding:16px 36px;border-radius:var(--r);font-weight:700;font-size:16px;transition:all .3s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px}.btn-m:hover{box-shadow:0 6px 28px rgba(0,214,143,.3);transform:translateY(-2px)}
+.footer{padding:60px 5% 24px;background:var(--dark);text-align:center}.footer p{font-size:13px;color:var(--text3)}.footer a{color:var(--text3)}.footer a:hover{color:var(--cyan)}
+@media(max-width:768px){.insight-grid{grid-template-columns:1fr}.nl{display:none}.hamburger{display:flex}.report-section{margin:0 3%;padding:24px 18px}}
+</style>
+</head>
+<body>
+<nav class="nav"><a href="index.html" class="nav-logo">Beyond<span>Horizon</span></a><div class="nl"><a href="how-it-works.html">How It Works</a><a href="blog.html">Blog</a><a href="corporate.html">Corporate</a><a href="contact.html">Contact</a><a href="index.html#pricing" class="btn-n">Order Your Kit</a></div><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></nav>
+<div class="mobile-menu" id="mobile-menu"><a href="how-it-works.html">How It Works</a><a href="blog.html">Blog</a><a href="corporate.html">Corporate</a><a href="contact.html">Contact</a><a href="index.html#pricing" class="btn-n">Order Your Kit</a></div>
+
+<section class="page-hero">
+  <div class="sample-badge">📋 Sample Report — Not Your Actual Results</div>
+  <h1>Explore a Sample DNA Report</h1>
+  <p>This is what your personalized health dashboard looks like. Scroll through real report categories and see the insights you'll unlock.</p>
+</section>
+
+<div style="padding-top:40px;max-width:900px;margin:0 auto">
+
+<!-- NUTRITION REPORT -->
+<div class="report-section reveal">
+  <div class="report-header"><div class="report-icon" style="background:rgba(0,194,255,.08)"><svg viewBox="0 0 24 24" stroke="#00C2FF"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg></div><div><h2>Nutrition & Diet</h2><p>How your genes influence what you should eat</p></div></div>
+  <div class="insight-grid">
+    <div class="insight"><h4>Caffeine Metabolism <span class="insight-status status-good">NORMAL</span></h4><p>You metabolize caffeine at a normal rate. Moderate coffee intake (2-3 cups) is well-tolerated by your genotype.</p><div class="insight-bar"><div class="insight-fill" style="width:72%;background:var(--green)"></div></div><div class="insight-meta"><span>CYP1A2 Gene</span><span>72nd percentile</span></div></div>
+    <div class="insight"><h4>Lactose Tolerance <span class="insight-status status-warn">REDUCED</span></h4><p>You carry a variant associated with reduced lactose digestion. Consider lactose-free alternatives or enzyme supplements.</p><div class="insight-bar"><div class="insight-fill" style="width:35%;background:var(--amber)"></div></div><div class="insight-meta"><span>MCM6 Gene</span><span>35th percentile</span></div></div>
+    <div class="insight"><h4>Carb Sensitivity <span class="insight-status status-good">LOW</span></h4><p>Your genotype suggests efficient carbohydrate processing. A balanced carb intake works well for your body.</p><div class="insight-bar"><div class="insight-fill" style="width:80%;background:var(--green)"></div></div><div class="insight-meta"><span>AMY1 Gene</span><span>80th percentile</span></div></div>
+    <div class="insight"><h4>Vitamin D Absorption <span class="insight-status status-risk">LOW</span></h4><p>You have a genetic variant that reduces Vitamin D absorption. Supplementation of 2000-4000 IU daily is recommended, especially in UAE climate.</p><div class="insight-bar"><div class="insight-fill" style="width:22%;background:var(--red)"></div></div><div class="insight-meta"><span>VDR Gene</span><span>22nd percentile</span></div></div>
+  </div>
+</div>
+
+<!-- FITNESS REPORT -->
+<div class="report-section reveal">
+  <div class="report-header"><div class="report-icon" style="background:rgba(0,214,143,.08)"><svg viewBox="0 0 24 24" stroke="#00D68F"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg></div><div><h2>Fitness & Recovery</h2><p>Your genetic blueprint for exercise optimization</p></div></div>
+  <div class="insight-grid">
+    <div class="insight"><h4>Muscle Fiber Type <span class="insight-status status-good">ENDURANCE</span></h4><p>You have a higher proportion of slow-twitch muscle fibers. Endurance activities like running and cycling are genetically favored.</p><div class="insight-bar"><div class="insight-fill" style="width:68%;background:var(--green)"></div></div><div class="insight-meta"><span>ACTN3 Gene</span><span>68% endurance</span></div></div>
+    <div class="insight"><h4>Recovery Speed <span class="insight-status status-warn">MODERATE</span></h4><p>Your genetic recovery rate is moderate. Allow 48-72 hours between intense sessions for optimal muscle repair.</p><div class="insight-bar"><div class="insight-fill" style="width:50%;background:var(--amber)"></div></div><div class="insight-meta"><span>IL-6 Gene</span><span>50th percentile</span></div></div>
+  </div>
+</div>
+
+<!-- HEART HEALTH — partially locked -->
+<div class="report-section reveal">
+  <div class="report-header"><div class="report-icon" style="background:rgba(255,107,107,.08)"><svg viewBox="0 0 24 24" stroke="#FF6B6B"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div><div><h2>Heart Health</h2><p>Cardiovascular risk assessment</p></div></div>
+  <div class="insight-grid">
+    <div class="insight"><h4>Cholesterol Metabolism <span class="insight-status status-warn">ELEVATED RISK</span></h4><p>Your APOE genotype suggests moderately elevated LDL cholesterol risk. Regular monitoring and heart-healthy diet recommended.</p><div class="insight-bar"><div class="insight-fill" style="width:40%;background:var(--amber)"></div></div><div class="insight-meta"><span>APOE Gene</span><span>Moderate risk</span></div></div>
+    <div class="insight" style="position:relative"><div class="locked-section"><h4>Blood Pressure Response</h4><p>Detailed analysis of your genetic predisposition to hypertension and salt sensitivity...</p><div class="insight-bar"><div class="insight-fill" style="width:55%;background:var(--cyan)"></div></div></div><div class="lock-overlay" onclick="window.location='index.html#pricing'"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><p>Unlock Full Report</p><span>Order your DNA kit to see all insights</span></div></div>
+  </div>
+</div>
+
+<!-- SLEEP — fully locked -->
+<div class="report-section reveal">
+  <div class="report-header"><div class="report-icon" style="background:rgba(177,140,255,.08)"><svg viewBox="0 0 24 24" stroke="#B18CFF"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></div><div><h2>Sleep & Stress</h2><p>Circadian rhythm and stress response</p></div></div>
+  <div style="position:relative;min-height:160px">
+    <div class="locked-section"><div class="insight-grid"><div class="insight"><h4>Chronotype</h4><p>Your natural sleep-wake cycle preference...</p><div class="insight-bar"><div class="insight-fill" style="width:80%;background:var(--purple)"></div></div></div><div class="insight"><h4>Cortisol Response</h4><p>How your body handles stress hormones...</p><div class="insight-bar"><div class="insight-fill" style="width:45%;background:var(--purple)"></div></div></div></div></div>
+    <div class="lock-overlay" onclick="window.location='index.html#pricing'"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><p>Unlock Sleep & Stress Report</p><span>Available in Health 360 and Complete plans</span></div>
+  </div>
+</div>
+
+</div>
+
+<section class="report-cta">
+  <h2 class="reveal">Ready to see YOUR results?</h2>
+  <p class="reveal">This is just a preview. Your actual report is personalized to your unique DNA — no two reports are the same.</p>
+  <a href="index.html#pricing" class="btn-m reveal">Get Your DNA Kit — AED 999 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+</section>
+
+<footer class="footer"><p>© 2026 Beyond Horizon. All rights reserved. · <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="index.html">Home</a></p></footer>
+
+<script>
+var obs=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.01,rootMargin:'0px 0px 50px 0px'});document.querySelectorAll('.reveal').forEach(function(e){obs.observe(e)});setTimeout(function(){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('v')})},1500);
+var burger=document.getElementById('hamburger'),mm=document.getElementById('mobile-menu');burger.addEventListener('click',function(){burger.classList.toggle('open');mm.classList.toggle('open')});document.querySelectorAll('#mobile-menu a').forEach(function(a){a.addEventListener('click',function(){burger.classList.remove('open');mm.classList.remove('open')})});
+</script>
+</body>
+</html>
